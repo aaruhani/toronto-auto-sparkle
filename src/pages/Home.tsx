@@ -64,7 +64,7 @@ const Home = () => {
         <div className="relative z-10 container mx-auto px-4 py-32 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             Expert Auto Care in{" "}
-            <span className="text-primary">Toronto</span>
+            <span className="text-primary">Markham</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Premium automotive service with certified technicians and
@@ -90,7 +90,7 @@ const Home = () => {
             <h2 className="text-4xl font-bold mb-4">Why Choose Us</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We combine expertise, quality, and customer service to deliver the
-              best automotive care in Toronto
+              best automotive care in Markham
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

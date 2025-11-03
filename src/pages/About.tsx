@@ -36,7 +36,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">About Us</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Toronto's premier automotive service center, dedicated to keeping
+              Markham's premier automotive service center, dedicated to keeping
               your vehicle running at its best
             </p>
           </div>
@@ -51,7 +51,7 @@ const About = () => {
               <h2 className="text-4xl font-bold mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in the heart of Toronto, Toronto Auto Garage has been
+                  Founded in Markham, FIXWELL AUTO has been
                   serving the community with exceptional automotive care and
                   honest service. Our journey began with a simple mission: to
                   provide reliable, high-quality auto repair services that
@@ -68,7 +68,7 @@ const About = () => {
                   We invest in the latest diagnostic equipment and ongoing
                   training to ensure we can handle everything from routine
                   maintenance to complex repairs on all makes and models. When
-                  you choose Toronto Auto Garage, you're choosing a partner who
+                  you choose FIXWELL AUTO, you're choosing a partner who
                   cares about your safety and your vehicle's performance.
                 </p>
               </div>

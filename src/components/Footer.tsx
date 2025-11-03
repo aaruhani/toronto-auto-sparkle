@@ -12,10 +12,10 @@ const Footer = () => {
               <div className="bg-primary p-2 rounded-lg">
                 <Wrench className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="font-bold">Toronto Auto Garage</span>
+              <span className="font-bold">FIXWELL AUTO</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Your trusted automotive service partner in Toronto, delivering
+              Your trusted automotive service partner in Markham, delivering
               excellence since day one.
             </p>
           </div>
@@ -69,25 +69,25 @@ const Footer = () => {
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                  123 Auto Street, Toronto, ON M5V 3A8
+                  7605 Woodbine Ave, Unit 10, Markham, Ontario L3R 5V3
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
                 <a
-                  href="tel:+14165551234"
+                  href="tel:+19054778276"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  (416) 555-1234
+                  905-477-8276
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:info@torontoautogarage.com"
+                  href="mailto:info@fixwellauto.com"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  info@torontoautogarage.com
+                  info@fixwellauto.com
                 </a>
               </div>
             </div>
@@ -96,7 +96,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Toronto Auto Garage. All rights reserved.
+            © {new Date().getFullYear()} FIXWELL AUTO. All rights reserved.
           </p>
         </div>
       </div>

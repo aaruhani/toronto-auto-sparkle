@@ -25,7 +25,7 @@ const Navigation = () => {
             <div className="bg-primary p-2 rounded-lg transition-transform group-hover:scale-110">
               <Wrench className="h-6 w-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold">Toronto Auto Garage</span>
+            <span className="text-xl font-bold">FIXWELL AUTO</span>
           </Link>
 
           {/* Desktop Navigation */}

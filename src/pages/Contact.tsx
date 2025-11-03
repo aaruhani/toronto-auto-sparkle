@@ -97,25 +97,25 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      content: "(416) 555-1234",
-      link: "tel:+14165551234",
+      content: "905-477-8276",
+      link: "tel:+19054778276",
     },
     {
       icon: Mail,
       title: "Email",
-      content: "info@torontoautogarage.com",
-      link: "mailto:info@torontoautogarage.com",
+      content: "info@fixwellauto.com",
+      link: "mailto:info@fixwellauto.com",
     },
     {
       icon: MapPin,
       title: "Address",
-      content: "123 Auto Street, Toronto, ON M5V 3A8",
+      content: "7605 Woodbine Ave, Unit 10, Markham, Ontario L3R 5V3",
       link: "https://maps.google.com",
     },
     {
       icon: Clock,
       title: "Hours",
-      content: "Mon-Fri: 8AM-6PM, Sat: 9AM-4PM",
+      content: "Mon-Fri: 8AM-5PM, Sat: 9AM-2PM, Sun: Closed",
       link: null,
     },
   ];
@@ -227,7 +227,7 @@ const Contact = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="(416) 555-1234"
+                      placeholder="905-477-8276"
                       required
                     />
                   </div>
