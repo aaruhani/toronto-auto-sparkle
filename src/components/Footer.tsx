@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Wrench } from "lucide-react";
+import { Phone, Mail, MapPin, Wrench, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -89,6 +89,14 @@ const Footer = () => {
                 >
                   info@fixwellauto.com
                 </a>
+              </div>
+              <div className="flex items-start gap-2">
+                <Clock className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                <div className="text-sm text-muted-foreground">
+                  <div>Mon-Fri: 8AM-5PM</div>
+                  <div>Sat: 9AM-2PM</div>
+                  <div>Sun: Closed</div>
+                </div>
               </div>
             </div>
           </div>
