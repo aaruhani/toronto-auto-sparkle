@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z
@@ -50,9 +51,14 @@ const Contact = () => {
       // Validate form data
       contactSchema.parse(formData);
 
-      // TODO: Implement email sending via edge function
-      // For now, just show success message
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Send email via edge function
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
 
       toast({
         title: "Message sent!",
