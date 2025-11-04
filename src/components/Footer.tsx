@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Wrench, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,9 +10,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="bg-primary p-2 rounded-lg">
-                <Wrench className="h-5 w-5 text-primary-foreground" />
-              </div>
+              <img 
+                src={logo} 
+                alt="FIXWELL AUTO Logo" 
+                className="h-10 w-10"
+              />
               <span className="font-bold">FIXWELL AUTO</span>
             </div>
             <p className="text-sm text-muted-foreground">

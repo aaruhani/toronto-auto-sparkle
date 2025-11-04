@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { Wrench } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -22,9 +22,11 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-primary p-2 rounded-lg transition-transform group-hover:scale-110">
-              <Wrench className="h-6 w-6 text-primary-foreground" />
-            </div>
+            <img 
+              src={logo} 
+              alt="FIXWELL AUTO Logo" 
+              className="h-12 w-12 transition-transform group-hover:scale-110"
+            />
             <span className="text-xl font-bold">FIXWELL AUTO</span>
           </Link>
 
