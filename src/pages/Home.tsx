@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Wrench, Clock, Shield, Award, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-garage.jpg";
+import heroImage from "@/assets/hero-garage.avif";
 
 const Home = () => {
   const features = [
