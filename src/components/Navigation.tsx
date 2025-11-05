@@ -44,7 +44,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Button asChild variant="default">
-              <Link to="/contact">Get Quote</Link>
+              <Link to="/contact">Request an Appointment</Link>
             </Button>
           </div>
 
@@ -80,7 +80,7 @@ const Navigation = () => {
               ))}
               <Button asChild variant="default" className="w-full">
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  Get Quote
+                  Request an Appointment
                 </Link>
               </Button>
             </div>

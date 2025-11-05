@@ -73,7 +73,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
               <Link to="/contact">
-                Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
+                Request an Appointment <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button asChild variant="secondary" size="lg">
