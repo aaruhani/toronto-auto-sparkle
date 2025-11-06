@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Wrench, Clock, Shield, Award, ArrowRight, Star } from "lucide-react";
+import { Wrench, Clock, Shield, Award, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-garage.avif";
 
 const Home = () => {
@@ -46,27 +46,6 @@ const Home = () => {
     {
       title: "Tire Service",
       description: "Tire rotation, balancing, and replacement services",
-    },
-  ];
-
-  const reviews = [
-    {
-      name: "Sarah Johnson",
-      rating: 5,
-      text: "Excellent service! They fixed my brake issue quickly and the price was very reasonable. Highly recommend!",
-      date: "2 weeks ago",
-    },
-    {
-      name: "Michael Chen",
-      rating: 5,
-      text: "Best auto shop in Markham. The technicians are knowledgeable and honest. They always explain what needs to be done.",
-      date: "1 month ago",
-    },
-    {
-      name: "Emily Rodriguez",
-      rating: 5,
-      text: "Great experience! Fast, professional service. They got me back on the road in no time.",
-      date: "3 weeks ago",
     },
   ];
 
@@ -163,42 +142,6 @@ const Home = () => {
                 View All Services <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Google Reviews Section */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What Our Customers Say</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Don't just take our word for it - see what our satisfied customers have to say
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {reviews.map((review, index) => (
-              <Card
-                key={index}
-                className="border-border hover:border-primary transition-all duration-300 hover:shadow-lg"
-              >
-                <CardContent className="pt-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-5 w-5 fill-primary text-primary"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4">{review.text}</p>
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
-                    <p className="font-semibold">{review.name}</p>
-                    <p className="text-sm text-muted-foreground">{review.date}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
