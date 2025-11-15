@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-car.png";
 
 const Footer = () => {
   return (
@@ -9,11 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <img 
                 src={logo} 
                 alt="FIXWELL AUTO Logo" 
-                className="h-10 w-10"
+                className="h-8 w-auto sm:h-10"
               />
               <span className="font-bold">FIXWELL AUTO</span>
             </div>
