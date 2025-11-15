@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-car.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -21,13 +21,13 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <img 
               src={logo} 
               alt="FIXWELL AUTO Logo" 
-              className="h-12 w-12 transition-transform group-hover:scale-110"
+              className="h-8 w-auto sm:h-10 md:h-12 transition-transform group-hover:scale-105"
             />
-            <span className="text-xl font-bold">FIXWELL AUTO</span>
+            <span className="text-lg sm:text-xl font-bold">FIXWELL AUTO</span>
           </Link>
 
           {/* Desktop Navigation */}
