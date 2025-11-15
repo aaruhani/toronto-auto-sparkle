@@ -72,9 +72,9 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <Link to="/contact">
+              <a href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=Y7C3apECuwSqaSpLkuchz5pmgsQ2&version=v.15.5.7" target="_blank" rel="noopener noreferrer">
                 Request an Appointment <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             <Button asChild variant="secondary" size="lg">
               <Link to="/services">View Services</Link>
