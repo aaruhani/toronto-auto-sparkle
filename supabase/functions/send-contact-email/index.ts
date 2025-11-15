@@ -41,27 +41,7 @@ const handler = async (req: Request): Promise<Response> => {
         <p>${message}</p>
       `,
     });
-
-    console.log("Owner email sent successfully:", ownerEmailResponse);
-
-    // Send confirmation email to customer
-    const customerEmailResponse = await resend.emails.send({
-      from: "FixWell Auto <onboarding@resend.dev>",
-      to: [email],
-      subject: "We received your message!",
-      html: `
-        <h1>Thank you for contacting us, ${name}!</h1>
-        <p>We have received your message and will get back to you as soon as possible.</p>
-        <p>Your message:</p>
-        <p><em>${message}</em></p>
-        <br/>
-        <p>Best regards,<br>The FixWell Auto Team</p>
-        <p>📞 905-477-8276 | 📧 service@fixwellauto.ca</p>
-      `,
-    });
-
-    console.log("Customer confirmation email sent successfully:", customerEmailResponse);
-
+    
     return new Response(
       JSON.stringify({ 
         success: true,
