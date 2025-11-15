@@ -29,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to business owner
     const ownerEmailResponse = await resend.emails.send({
-      from: "FixWell Auto <onboarding@resend.dev>",
+      from: "service@fixwellauto.ca",
       to: ["service@fixwellauto.ca"],
       subject: `New Contact Form Submission from ${name}`,
       html: `
