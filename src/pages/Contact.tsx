@@ -109,8 +109,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@fixwellauto.com",
-      link: "mailto:info@fixwellauto.com",
+      content: "service@fixwellauto.ca",
+      link: "mailto:service@fixwellauto.ca",
     },
     {
       icon: MapPin,

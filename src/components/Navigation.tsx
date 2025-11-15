@@ -44,7 +44,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Button asChild variant="default">
-              <Link to="/contact">Request an Appointment</Link>
+              <a href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=Y7C3apECuwSqaSpLkuchz5pmgsQ2&version=v.15.5.7" target="_blank" rel="noopener noreferrer">Request an Appointment</a>
             </Button>
           </div>
 
@@ -79,9 +79,9 @@ const Navigation = () => {
                 </Link>
               ))}
               <Button asChild variant="default" className="w-full">
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <a href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=Y7C3apECuwSqaSpLkuchz5pmgsQ2&version=v.15.5.7" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                   Request an Appointment
-                </Link>
+                </a>
               </Button>
             </div>
           </div>

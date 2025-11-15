@@ -87,10 +87,10 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:info@fixwellauto.com"
+                  href="mailto:service@fixwellauto.ca"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  info@fixwellauto.com
+                  service@fixwellauto.ca
                 </a>
               </div>
               <div className="flex items-start gap-2">
