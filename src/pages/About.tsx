@@ -59,7 +59,7 @@ const About = () => {
                 </p>
                 <p>
                   Over the years, we've built our reputation on transparency,
-                  expertise, and customer satisfaction. Our team of certified
+                  expertise, and customer satisfaction. <strong>We specialize in electric vehicles (EVs), plug-in hybrids, and hybrid cars</strong>, staying at the forefront of automotive technology. Our team of certified
                   technicians is passionate about cars and committed to
                   delivering the best possible service for every vehicle that
                   comes through our doors.
@@ -67,7 +67,7 @@ const About = () => {
                 <p>
                   We invest in the latest diagnostic equipment and ongoing
                   training to ensure we can handle everything from routine
-                  maintenance to complex repairs on all makes and models. When
+                  maintenance to complex repairs on all makes and models—especially the unique requirements of electric and hybrid powertrains. When
                   you choose FIXWELL AUTO, you're choosing a partner who
                   cares about your safety and your vehicle's performance.
                 </p>

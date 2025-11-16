@@ -130,8 +130,11 @@ const Services = () => {
         />
         <div className="relative z-10 container mx-auto px-4 py-32 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
+          <div className="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            ⚡ EV, Plug-in & Hybrid Specialists
+          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive automotive solutions delivered by certified
+            Comprehensive automotive solutions for electric, hybrid, and conventional vehicles delivered by certified
             technicians with state-of-the-art equipment
           </p>
         </div>

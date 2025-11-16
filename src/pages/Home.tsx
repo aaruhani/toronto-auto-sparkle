@@ -66,9 +66,11 @@ const Home = () => {
             Expert Auto Care in{" "}
             <span className="text-primary">Markham</span>
           </h1>
+          <div className="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            ⚡ Specializing in EV, Plug-in & Hybrid Vehicles
+          </div>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Premium automotive service with certified technicians and
-            state-of-the-art equipment
+            Premium automotive service for electric, hybrid, and conventional vehicles with certified technicians and state-of-the-art equipment
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
