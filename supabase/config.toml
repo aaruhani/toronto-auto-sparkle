@@ -1,1 +1,5 @@
 project_id = "stjkxlcckbdksxauuiaj"
+
+# Public contact form endpoint - no authentication required
+[functions.send-contact-email]
+verify_jwt = false
