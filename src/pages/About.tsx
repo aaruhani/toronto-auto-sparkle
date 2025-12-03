@@ -10,7 +10,7 @@ const About = () => {
       icon: Users,
       title: "Expert Team",
       description:
-        "Our certified technicians bring decades of combined experience to every job",
+        "Our certified technician brings decades of experience to every job",
     },
     {
       icon: Target,
@@ -59,8 +59,8 @@ const About = () => {
                 </p>
                 <p>
                   Over the years, we've built our reputation on transparency,
-                  expertise, and customer satisfaction. We service all types of vehicles including electric vehicles (EVs), plug-in hybrids, and hybrid cars, staying current with the latest automotive technology. Our team of certified
-                  technicians is passionate about cars and committed to
+                  expertise, and customer satisfaction. We service all types of vehicles including electric vehicles (EVs), plug-in hybrids, and hybrid cars, staying current with the latest automotive technology. Our certified
+                  technician is passionate about cars and committed to
                   delivering the best possible service for every vehicle that
                   comes through our doors.
                 </p>
@@ -125,8 +125,8 @@ const About = () => {
               <p className="text-muted-foreground">Vehicles Serviced</p>
             </div>
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">15</div>
-              <p className="text-muted-foreground">Expert Technicians</p>
+              <div className="text-5xl font-bold text-primary mb-2">1</div>
+              <p className="text-muted-foreground">Expert Technician</p>
             </div>
             <div>
               <div className="text-5xl font-bold text-primary mb-2">98%</div>
