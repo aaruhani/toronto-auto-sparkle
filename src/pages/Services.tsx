@@ -2,102 +2,23 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import {
-  Wrench,
-  Gauge,
   Cog,
-  Circle,
+  ArrowRight,
+  Zap,
+  Droplets,
+  Disc,
+  CircleDot,
   Battery,
   Wind,
   Settings,
-  Zap,
-  ArrowRight,
-  BatteryCharging,
-  Plug,
-  Leaf,
 } from "lucide-react";
 import servicesImage from "@/assets/services-bg.jpg";
 
 const Services = () => {
-  const evServices = [
-    {
-      icon: BatteryCharging,
-      title: "EV Battery Diagnostics",
-      description:
-        "Comprehensive battery health analysis, capacity testing, and performance optimization for all electric vehicles",
-      features: [
-        "Battery health assessment",
-        "State of charge (SOC) testing",
-        "Thermal management check",
-        "Range optimization",
-      ],
-    },
-    {
-      icon: Plug,
-      title: "Charging System Service",
-      description:
-        "Expert maintenance and repair of charging systems, including on-board chargers and charging ports",
-      features: [
-        "Charging port inspection",
-        "On-board charger testing",
-        "Cable and connector repair",
-        "Fast charging diagnostics",
-      ],
-    },
-    {
-      icon: Zap,
-      title: "Electric Powertrain Service",
-      description:
-        "Specialized service for electric motors, inverters, and power electronics unique to EVs and hybrids",
-      features: [
-        "Motor diagnostics",
-        "Inverter testing",
-        "Regenerative braking service",
-        "Power electronics repair",
-      ],
-    },
-    {
-      icon: Leaf,
-      title: "Hybrid System Maintenance",
-      description:
-        "Complete maintenance for plug-in and standard hybrid vehicles, ensuring optimal fuel efficiency",
-      features: [
-        "Hybrid battery service",
-        "Engine-electric coordination",
-        "Hybrid transmission service",
-        "Fuel economy optimization",
-      ],
-    },
-    {
-      icon: Settings,
-      title: "High Voltage Systems",
-      description:
-        "Safe and certified service for high voltage components in electric and hybrid vehicles",
-      features: [
-        "HV safety inspection",
-        "Cooling system maintenance",
-        "Electrical isolation testing",
-        "Component replacement",
-      ],
-    },
-    {
-      icon: Gauge,
-      title: "EV Software Updates",
-      description:
-        "Firmware updates and software diagnostics to keep your EV running with the latest features",
-      features: [
-        "Software diagnostics",
-        "Firmware updates",
-        "System recalibration",
-        "Performance tuning",
-      ],
-    },
-  ];
-
   const services = [
     {
-      icon: Wrench,
+      icon: Droplets,
       title: "Oil Change & Lubrication",
       description:
         "Regular oil changes and lubrication services to keep your engine running smoothly and extend its life",
@@ -109,7 +30,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Circle,
+      icon: Disc,
       title: "Brake Service",
       description:
         "Complete brake system inspection, maintenance, and repair for optimal stopping power and safety",
@@ -133,7 +54,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Gauge,
+      icon: CircleDot,
       title: "Tire Service",
       description:
         "Comprehensive tire services including installation, balancing, rotation, and alignment",
@@ -208,59 +129,10 @@ const Services = () => {
         />
         <div className="relative z-10 container mx-auto px-4 py-32 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
-          <div className="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            ⚡ EV, Plug-in & Hybrid Specialists
-          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive automotive solutions for electric, hybrid, and conventional vehicles delivered by certified
+            Comprehensive automotive solutions for all vehicles including EV, plug-in and hybrid, delivered by certified
             technicians with state-of-the-art equipment
           </p>
-        </div>
-      </section>
-
-      {/* EV/Hybrid Services Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-primary/10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              ⚡ Our Specialty
-            </div>
-            <h2 className="text-4xl font-bold mb-4">
-              EV, Plug-In & Hybrid Services
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Advanced diagnostics and maintenance for electric and hybrid vehicles using specialized equipment and certified technicians
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {evServices.map((service, index) => (
-              <Card
-                key={index}
-                className="border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl group bg-card/50 backdrop-blur"
-              >
-                <CardContent className="pt-6">
-                  <div className="inline-flex p-3 rounded-lg bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center gap-2 text-sm text-muted-foreground"
-                      >
-                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -269,7 +141,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">
-              General Automotive Services
+              Automotive Services
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Complete maintenance and repair services for all vehicle types
@@ -318,7 +190,7 @@ const Services = () => {
               <div className="space-y-4">
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    Certified Technicians
+                    Certified Technician
                   </h3>
                   <p className="text-muted-foreground">
                     Our team consists of ASE-certified technicians with
@@ -372,7 +244,7 @@ const Services = () => {
           </p>
           <Button asChild size="lg">
             <a href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=Y7C3apECuwSqaSpLkuchz5pmgsQ2&version=v.15.5.7" target="_blank" rel="noopener noreferrer">
-              Schedule Service <ArrowRight className="ml-2 h-5 w-5" />
+              Request an Appointment <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
         </div>

@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Heart } from "lucide-react";
-import aboutImage from "@/assets/about-team.jpg";
+import aboutImage from "@/assets/about-car-repair.jpg";
 
 const About = () => {
   const values = [
@@ -59,7 +59,7 @@ const About = () => {
                 </p>
                 <p>
                   Over the years, we've built our reputation on transparency,
-                  expertise, and customer satisfaction. <strong>We specialize in electric vehicles (EVs), plug-in hybrids, and hybrid cars</strong>, staying at the forefront of automotive technology. Our team of certified
+                  expertise, and customer satisfaction. We service all types of vehicles including electric vehicles (EVs), plug-in hybrids, and hybrid cars, staying current with the latest automotive technology. Our team of certified
                   technicians is passionate about cars and committed to
                   delivering the best possible service for every vehicle that
                   comes through our doors.
@@ -67,7 +67,7 @@ const About = () => {
                 <p>
                   We invest in the latest diagnostic equipment and ongoing
                   training to ensure we can handle everything from routine
-                  maintenance to complex repairs on all makes and models—especially the unique requirements of electric and hybrid powertrains. When
+                  maintenance to complex repairs on all makes and models. When
                   you choose FIXWELL AUTO, you're choosing a partner who
                   cares about your safety and your vehicle's performance.
                 </p>
@@ -76,7 +76,7 @@ const About = () => {
             <div className="relative">
               <img
                 src={aboutImage}
-                alt="Our team"
+                alt="Car being repaired at FIXWELL AUTO"
                 className="rounded-lg shadow-2xl"
               />
             </div>

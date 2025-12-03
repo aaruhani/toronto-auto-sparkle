@@ -1,12 +1,30 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Wrench, Clock, Shield, Award, ArrowRight } from "lucide-react";
+import { 
+  Clock, 
+  Shield, 
+  Award, 
+  Wrench, 
+  ArrowRight, 
+  ChevronRight,
+  Droplets,
+  Disc,
+  CircleDot,
+  Battery,
+  Wind,
+  Settings,
+  Zap,
+  Cog
+} from "lucide-react";
 import heroImage from "@/assets/hero-garage.avif";
 
 const Home = () => {
+  const [expandedService, setExpandedService] = useState<number | null>(null);
+
   const features = [
     {
       icon: Clock,
@@ -32,20 +50,52 @@ const Home = () => {
 
   const services = [
     {
-      title: "Oil Change & Maintenance",
-      description: "Regular maintenance to keep your vehicle running smoothly",
+      icon: Droplets,
+      title: "Oil Change & Lubrication",
+      description: "Regular oil changes and lubrication services to keep your engine running smoothly and extend its life",
+      features: ["Synthetic & conventional oil", "Filter replacement", "Fluid level check", "Multi-point inspection"],
     },
     {
+      icon: Disc,
       title: "Brake Service",
-      description: "Complete brake inspection, repair, and replacement",
+      description: "Complete brake system inspection, maintenance, and repair for optimal stopping power and safety",
+      features: ["Brake pad replacement", "Rotor resurfacing", "Brake fluid flush", "ABS diagnostics"],
     },
     {
+      icon: Cog,
       title: "Engine Diagnostics",
-      description: "Advanced computer diagnostics for all makes and models",
+      description: "Advanced computer diagnostics to identify and resolve engine issues quickly and accurately",
+      features: ["Check engine light diagnosis", "Performance testing", "Emission testing", "Computer reprogramming"],
     },
     {
+      icon: CircleDot,
       title: "Tire Service",
-      description: "Tire rotation, balancing, and replacement services",
+      description: "Comprehensive tire services including installation, balancing, rotation, and alignment",
+      features: ["Tire installation", "Wheel balancing", "Tire rotation", "Alignment service"],
+    },
+    {
+      icon: Battery,
+      title: "Battery Service",
+      description: "Battery testing, maintenance, and replacement to ensure reliable starts every time",
+      features: ["Battery testing", "Terminal cleaning", "Battery replacement", "Charging system check"],
+    },
+    {
+      icon: Wind,
+      title: "Air Conditioning",
+      description: "AC system diagnostics, recharge, and repair to keep you comfortable in any weather",
+      features: ["AC performance check", "Refrigerant recharge", "Leak detection", "Component replacement"],
+    },
+    {
+      icon: Settings,
+      title: "Transmission Service",
+      description: "Transmission maintenance and repair for smooth shifting and optimal performance",
+      features: ["Fluid exchange", "Filter replacement", "Diagnostics", "Repair & rebuild"],
+    },
+    {
+      icon: Zap,
+      title: "Electrical Systems",
+      description: "Expert electrical diagnostics and repair for all vehicle electrical components",
+      features: ["Alternator service", "Starter replacement", "Lighting repair", "Wiring diagnostics"],
     },
   ];
 
@@ -66,11 +116,8 @@ const Home = () => {
             Expert Auto Care in{" "}
             <span className="text-primary">Markham</span>
           </h1>
-          <div className="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            ⚡ Specializing in EV, Plug-in & Hybrid Vehicles
-          </div>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Premium automotive service for electric, hybrid, and conventional vehicles with certified technicians and state-of-the-art equipment
+            Premium automotive service for all vehicles including EV, plug-in and hybrid, delivered by certified technicians with state-of-the-art equipment
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
@@ -114,7 +161,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Preview */}
+      {/* All Services Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -123,27 +170,46 @@ const Home = () => {
               Comprehensive automotive solutions for all your vehicle needs
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="border-border hover:border-primary transition-all duration-300 group cursor-pointer"
+                className={`border-border hover:border-primary transition-all duration-300 group cursor-pointer ${
+                  expandedService === index ? "border-primary shadow-lg" : ""
+                }`}
+                onClick={() => setExpandedService(expandedService === index ? null : index)}
               >
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="inline-flex p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <service.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <ChevronRight 
+                      className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${
+                        expandedService === index ? "rotate-90" : ""
+                      }`} 
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
+                  
+                  {expandedService === index && (
+                    <div className="mt-4 pt-4 border-t border-border animate-fade-in">
+                      <ul className="space-y-2">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button asChild size="lg">
-              <Link to="/services">
-                View All Services <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
