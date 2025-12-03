@@ -130,8 +130,8 @@ const Services = () => {
         <div className="relative z-10 container mx-auto px-4 py-32 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive automotive solutions for all vehicles including EV, plug-in and hybrid, delivered by certified
-            technicians with state-of-the-art equipment
+            Comprehensive automotive solutions for all vehicles including EV, plug-in and hybrid, delivered by a certified
+            technician with state-of-the-art equipment
           </p>
         </div>
       </section>
@@ -193,8 +193,7 @@ const Services = () => {
                     Certified Technician
                   </h3>
                   <p className="text-muted-foreground">
-                    Our team consists of ASE-certified technicians with
-                    extensive training and experience
+                    Our ASE-certified technician has extensive training and experience
                   </p>
                 </div>
                 <div>

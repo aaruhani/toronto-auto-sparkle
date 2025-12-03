@@ -117,7 +117,7 @@ const Home = () => {
             <span className="text-primary">Markham</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Premium automotive service for all vehicles including EV, plug-in and hybrid, delivered by certified technicians with state-of-the-art equipment
+            Premium automotive service for all vehicles including EV, plug-in and hybrid, delivered by a certified technician with state-of-the-art equipment
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
