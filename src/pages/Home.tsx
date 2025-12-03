@@ -15,7 +15,7 @@ const Home = () => {
     },
     {
       icon: Shield,
-      title: "Certified Technicians",
+      title: "Certified Technician",
       description: "Expert team with years of automotive experience",
     },
     {
