@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Cog, ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import servicesImage from "@/assets/services-bg.jpg";
 
 // Service icon images
@@ -12,6 +12,8 @@ import engineLightIcon from "@/assets/service-icons/engine-light.png";
 import tirePressureIcon from "@/assets/service-icons/tire-light.png";
 import batteryLightIcon from "@/assets/service-icons/battery-light.png";
 import acServiceIcon from "@/assets/service-icons/ac-service.png";
+import electricalServiceIcon from "@/assets/service-icons/electrical-service.png";
+import transmissionServiceIcon from "@/assets/service-icons/transmission-service.png";
 
 const Services = () => {
   const services = [
@@ -88,7 +90,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Cog,
+      image: transmissionServiceIcon,
       title: "Transmission Service",
       description:
         "Transmission maintenance and repair for smooth shifting and optimal performance",
@@ -100,7 +102,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Zap,
+      image: electricalServiceIcon,
       title: "Electrical Systems",
       description:
         "Expert electrical diagnostics and repair for all vehicle electrical components",
@@ -152,16 +154,12 @@ const Services = () => {
                 className="border-border hover:border-primary transition-all duration-300 hover:shadow-lg group"
               >
                 <CardContent className="pt-6">
-                  <div className="inline-flex p-2 rounded-lg bg-background/80 mb-4 group-hover:bg-background transition-colors">
-                    {'image' in service ? (
-                      <img 
-                        src={service.image} 
-                        alt={service.title} 
-                        className="h-12 w-12 object-contain"
-                      />
-                    ) : (
-                      <service.icon className="h-12 w-12 text-primary" />
-                    )}
+                  <div className="mb-4">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="h-16 w-16 object-contain mix-blend-screen"
+                    />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground mb-4">

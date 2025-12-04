@@ -125,8 +125,8 @@ const About = () => {
               <p className="text-muted-foreground">Vehicles Serviced</p>
             </div>
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">1</div>
-              <p className="text-muted-foreground">Expert Technician</p>
+              <div className="text-4xl font-bold text-primary mb-2">Certified</div>
+              <p className="text-muted-foreground">Expert Technicians</p>
             </div>
             <div>
               <div className="text-5xl font-bold text-primary mb-2">98%</div>

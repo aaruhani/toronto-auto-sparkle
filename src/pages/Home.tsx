@@ -4,25 +4,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { 
-  Clock, 
-  Shield, 
-  Award, 
-  Wrench, 
-  ArrowRight, 
+import {
+  Clock,
+  Shield,
+  Award,
+  Wrench,
   ChevronRight,
-  Cog,
-  Zap
 } from "lucide-react";
 import heroImage from "@/assets/hero-garage.avif";
-
-// Service icon images
 import oilPressureIcon from "@/assets/service-icons/oil-pressure.png";
 import absBrakeIcon from "@/assets/service-icons/abs-brake.png";
 import engineLightIcon from "@/assets/service-icons/engine-light.png";
 import tirePressureIcon from "@/assets/service-icons/tire-light.png";
 import batteryLightIcon from "@/assets/service-icons/battery-light.png";
 import acServiceIcon from "@/assets/service-icons/ac-service.png";
+import electricalServiceIcon from "@/assets/service-icons/electrical-service.png";
+import transmissionServiceIcon from "@/assets/service-icons/transmission-service.png";
 
 const Home = () => {
   const [expandedService, setExpandedService] = useState<number | null>(null);
@@ -88,13 +85,13 @@ const Home = () => {
       features: ["AC performance check", "Refrigerant recharge", "Leak detection", "Component replacement"],
     },
     {
-      icon: Cog,
+      image: transmissionServiceIcon,
       title: "Transmission Service",
       description: "Transmission maintenance and repair for smooth shifting and optimal performance",
       features: ["Fluid exchange", "Filter replacement", "Diagnostics", "Repair & rebuild"],
     },
     {
-      icon: Zap,
+      image: electricalServiceIcon,
       title: "Electrical Systems",
       description: "Expert electrical diagnostics and repair for all vehicle electrical components",
       features: ["Alternator service", "Starter replacement", "Lighting repair", "Wiring diagnostics"],
@@ -122,12 +119,12 @@ const Home = () => {
             Premium automotive service for all vehicles including EV, plug-in and hybrid, delivered by a certified technician with state-of-the-art equipment
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="font-bold">
               <a href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=Y7C3apECuwSqaSpLkuchz5pmgsQ2&version=v.15.5.7" target="_blank" rel="noopener noreferrer">
-                Request an Appointment <ArrowRight className="ml-2 h-5 w-5" />
+                Request an Appointment
               </a>
             </Button>
-            <Button asChild variant="secondary" size="lg">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-200 border-none font-bold">
               <Link to="/services">View Services</Link>
             </Button>
           </div>
@@ -176,35 +173,29 @@ const Home = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className={`border-border hover:border-primary transition-all duration-300 group cursor-pointer ${
-                  expandedService === index ? "border-primary shadow-lg" : ""
-                }`}
+                className={`border-border hover:border-primary transition-all duration-300 group cursor-pointer ${expandedService === index ? "border-primary shadow-lg" : ""
+                  }`}
                 onClick={() => setExpandedService(expandedService === index ? null : index)}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <div className="inline-flex p-2 rounded-lg bg-background/80 group-hover:bg-background transition-colors">
-                      {'image' in service ? (
-                        <img 
-                          src={service.image} 
-                          alt={service.title} 
-                          className="h-10 w-10 object-contain"
-                        />
-                      ) : (
-                        <service.icon className="h-10 w-10 text-primary" />
-                      )}
+                    <div className="mb-3">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="h-14 w-14 object-contain mix-blend-screen"
+                      />
                     </div>
-                    <ChevronRight 
-                      className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${
-                        expandedService === index ? "rotate-90" : ""
-                      }`} 
+                    <ChevronRight
+                      className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${expandedService === index ? "rotate-90" : ""
+                        }`}
                     />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
-                  
+
                   {expandedService === index && (
                     <div className="mt-4 pt-4 border-t border-border animate-fade-in">
                       <ul className="space-y-2">

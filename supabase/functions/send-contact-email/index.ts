@@ -29,9 +29,9 @@ const escapeHtml = (text: string): string => {
 
 // Get client IP address from request
 const getClientIp = (req: Request): string => {
-  return req.headers.get("x-forwarded-for")?.split(",")[0].trim() || 
-         req.headers.get("x-real-ip") || 
-         "unknown";
+  return req.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+    req.headers.get("x-real-ip") ||
+    "unknown";
 };
 
 const handler = async (req: Request): Promise<Response> => {
@@ -56,21 +56,21 @@ const handler = async (req: Request): Promise<Response> => {
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
-    
+
     if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail) || normalizedEmail.length > 255) {
       return new Response(
         JSON.stringify({ error: "Invalid email address" }),
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
-    
+
     if (!normalizedPhone || normalizedPhone.length < 10 || normalizedPhone.length > 20) {
       return new Response(
         JSON.stringify({ error: "Phone number must be between 10 and 20 characters" }),
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
-    
+
     if (!normalizedMessage || normalizedMessage.length < 10 || normalizedMessage.length > 1000) {
       return new Response(
         JSON.stringify({ error: "Message must be between 10 and 1000 characters" }),
@@ -135,12 +135,13 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending contact form email from:", normalizedEmail);
 
-    // Configure SMTP client
+    // Configure SMTP client with direct TLS (port 465)
+    // Note: Make sure SMTP_PORT is set to 465 in Supabase secrets
     const client = new SMTPClient({
       connection: {
         hostname: Deno.env.get("SMTP_HOST")!,
         port: Number(Deno.env.get("SMTP_PORT")),
-        tls: true,
+        tls: true, // Use direct TLS for port 465
         auth: {
           username: Deno.env.get("SMTP_USER")!,
           password: Deno.env.get("SMTP_PASSWORD")!,
@@ -148,12 +149,13 @@ const handler = async (req: Request): Promise<Response> => {
       },
     });
 
-    // Send email to business owner with escaped HTML content
-    await client.send({
-      from: Deno.env.get("SMTP_USER")!,
-      to: "service@fixwellauto.ca",
-      subject: `New Contact Form Submission from ${escapeHtml(normalizedName)}`,
-      content: `
+    try {
+      // Send email to business owner with escaped HTML content
+      await client.send({
+        from: Deno.env.get("SMTP_USER")!,
+        to: "service@fixwellauto.ca",
+        subject: `New Contact Form Submission from ${escapeHtml(normalizedName)}`,
+        content: `
         New Contact Form Submission
         
         Name: ${normalizedName}
@@ -163,7 +165,7 @@ const handler = async (req: Request): Promise<Response> => {
         Message:
         ${normalizedMessage}
       `,
-      html: `
+        html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${escapeHtml(normalizedName)}</p>
         <p><strong>Email:</strong> ${escapeHtml(normalizedEmail)}</p>
@@ -171,10 +173,15 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Message:</strong></p>
         <p>${escapeHtml(normalizedMessage).replace(/\n/g, '<br>')}</p>
       `,
-    });
+      });
 
-    await client.close();
-    
+      await client.close();
+    } catch (smtpError: any) {
+      console.error("SMTP Error:", smtpError);
+      await client.close();
+      throw new Error(`SMTP Error: ${smtpError.message}`);
+    }
+
     return new Response(
       JSON.stringify({ success: true }), {
       status: 200,
@@ -185,8 +192,16 @@ const handler = async (req: Request): Promise<Response> => {
     });
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
+    console.error("Error details:", {
+      message: error.message,
+      stack: error.stack,
+      name: error.name,
+    });
     return new Response(
-      JSON.stringify({ error: "Failed to send email" }),
+      JSON.stringify({
+        error: "Failed to send email",
+        details: error.message // Include error message in response for debugging
+      }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
