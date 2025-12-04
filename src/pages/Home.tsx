@@ -11,16 +11,18 @@ import {
   Wrench, 
   ArrowRight, 
   ChevronRight,
-  Fuel,
-  AlertCircle,
-  Gauge,
-  BatteryWarning,
-  Thermometer,
   Cog,
-  Zap,
-  Car
+  Zap
 } from "lucide-react";
 import heroImage from "@/assets/hero-garage.avif";
+
+// Service icon images
+import oilPressureIcon from "@/assets/service-icons/oil-pressure.png";
+import absBrakeIcon from "@/assets/service-icons/abs-brake.jpeg";
+import engineLightIcon from "@/assets/service-icons/engine-light.png";
+import tirePressureIcon from "@/assets/service-icons/tire-pressure.avif";
+import batteryLightIcon from "@/assets/service-icons/battery-light.webp";
+import acServiceIcon from "@/assets/service-icons/ac-service.jpg";
 
 const Home = () => {
   const [expandedService, setExpandedService] = useState<number | null>(null);
@@ -50,37 +52,37 @@ const Home = () => {
 
   const services = [
     {
-      icon: Fuel,
+      image: oilPressureIcon,
       title: "Oil Change & Lubrication",
       description: "Regular oil changes and lubrication services to keep your engine running smoothly and extend its life",
       features: ["Synthetic & conventional oil", "Filter replacement", "Fluid level check", "Multi-point inspection"],
     },
     {
-      icon: AlertCircle,
+      image: absBrakeIcon,
       title: "Brake Service",
       description: "Complete brake system inspection, maintenance, and repair for optimal stopping power and safety",
       features: ["Brake pad replacement", "Rotor resurfacing", "Brake fluid flush", "ABS diagnostics"],
     },
     {
-      icon: Car,
+      image: engineLightIcon,
       title: "Engine Diagnostics",
       description: "Advanced computer diagnostics to identify and resolve engine issues quickly and accurately",
       features: ["Check engine light diagnosis", "Performance testing", "Emission testing", "Computer reprogramming"],
     },
     {
-      icon: Gauge,
+      image: tirePressureIcon,
       title: "Tire Service",
       description: "Comprehensive tire services including installation, balancing, rotation, and alignment",
       features: ["Tire installation", "Wheel balancing", "Tire rotation", "Alignment service"],
     },
     {
-      icon: BatteryWarning,
+      image: batteryLightIcon,
       title: "Battery Service",
       description: "Battery testing, maintenance, and replacement to ensure reliable starts every time",
       features: ["Battery testing", "Terminal cleaning", "Battery replacement", "Charging system check"],
     },
     {
-      icon: Thermometer,
+      image: acServiceIcon,
       title: "Air Conditioning",
       description: "AC system diagnostics, recharge, and repair to keep you comfortable in any weather",
       features: ["AC performance check", "Refrigerant recharge", "Leak detection", "Component replacement"],
@@ -181,8 +183,16 @@ const Home = () => {
               >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <div className="inline-flex p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <service.icon className="h-6 w-6 text-primary" />
+                    <div className="inline-flex p-2 rounded-lg bg-background/80 group-hover:bg-background transition-colors">
+                      {'image' in service ? (
+                        <img 
+                          src={service.image} 
+                          alt={service.title} 
+                          className="h-10 w-10 object-contain"
+                        />
+                      ) : (
+                        <service.icon className="h-10 w-10 text-primary" />
+                      )}
                     </div>
                     <ChevronRight 
                       className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${
