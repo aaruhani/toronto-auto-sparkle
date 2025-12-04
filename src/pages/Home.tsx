@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import GoogleReviews from "@/components/GoogleReviews";
 import {
   Clock,
   Shield,
@@ -214,6 +215,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews Section */}
+      <GoogleReviews />
 
       {/* CTA Section */}
       <section className="py-20 bg-primary/10">
