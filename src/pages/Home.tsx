@@ -18,11 +18,11 @@ import heroImage from "@/assets/hero-garage.avif";
 
 // Service icon images
 import oilPressureIcon from "@/assets/service-icons/oil-pressure.png";
-import absBrakeIcon from "@/assets/service-icons/abs-brake.jpeg";
+import absBrakeIcon from "@/assets/service-icons/abs-brake.png";
 import engineLightIcon from "@/assets/service-icons/engine-light.png";
-import tirePressureIcon from "@/assets/service-icons/tire-pressure.avif";
-import batteryLightIcon from "@/assets/service-icons/battery-light.webp";
-import acServiceIcon from "@/assets/service-icons/ac-service.jpg";
+import tirePressureIcon from "@/assets/service-icons/tire-light.png";
+import batteryLightIcon from "@/assets/service-icons/battery-light.png";
+import acServiceIcon from "@/assets/service-icons/ac-service.png";
 
 const Home = () => {
   const [expandedService, setExpandedService] = useState<number | null>(null);
