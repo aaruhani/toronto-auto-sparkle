@@ -2,23 +2,21 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Cog,
-  ArrowRight,
-  Zap,
-  Fuel,
-  AlertCircle,
-  Gauge,
-  BatteryWarning,
-  Thermometer,
-  Car,
-} from "lucide-react";
+import { Cog, ArrowRight, Zap } from "lucide-react";
 import servicesImage from "@/assets/services-bg.jpg";
+
+// Service icon images
+import oilPressureIcon from "@/assets/service-icons/oil-pressure.png";
+import absBrakeIcon from "@/assets/service-icons/abs-brake.jpeg";
+import engineLightIcon from "@/assets/service-icons/engine-light.png";
+import tirePressureIcon from "@/assets/service-icons/tire-pressure.avif";
+import batteryLightIcon from "@/assets/service-icons/battery-light.webp";
+import acServiceIcon from "@/assets/service-icons/ac-service.jpg";
 
 const Services = () => {
   const services = [
     {
-      icon: Fuel,
+      image: oilPressureIcon,
       title: "Oil Change & Lubrication",
       description:
         "Regular oil changes and lubrication services to keep your engine running smoothly and extend its life",
@@ -30,7 +28,7 @@ const Services = () => {
       ],
     },
     {
-      icon: AlertCircle,
+      image: absBrakeIcon,
       title: "Brake Service",
       description:
         "Complete brake system inspection, maintenance, and repair for optimal stopping power and safety",
@@ -42,7 +40,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Car,
+      image: engineLightIcon,
       title: "Engine Diagnostics",
       description:
         "Advanced computer diagnostics to identify and resolve engine issues quickly and accurately",
@@ -54,7 +52,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Gauge,
+      image: tirePressureIcon,
       title: "Tire Service",
       description:
         "Comprehensive tire services including installation, balancing, rotation, and alignment",
@@ -66,7 +64,7 @@ const Services = () => {
       ],
     },
     {
-      icon: BatteryWarning,
+      image: batteryLightIcon,
       title: "Battery Service",
       description:
         "Battery testing, maintenance, and replacement to ensure reliable starts every time",
@@ -78,7 +76,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Thermometer,
+      image: acServiceIcon,
       title: "Air Conditioning",
       description:
         "AC system diagnostics, recharge, and repair to keep you comfortable in any weather",
@@ -154,8 +152,16 @@ const Services = () => {
                 className="border-border hover:border-primary transition-all duration-300 hover:shadow-lg group"
               >
                 <CardContent className="pt-6">
-                  <div className="inline-flex p-3 rounded-lg bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="h-8 w-8 text-primary" />
+                  <div className="inline-flex p-2 rounded-lg bg-background/80 mb-4 group-hover:bg-background transition-colors">
+                    {'image' in service ? (
+                      <img 
+                        src={service.image} 
+                        alt={service.title} 
+                        className="h-12 w-12 object-contain"
+                      />
+                    ) : (
+                      <service.icon className="h-12 w-12 text-primary" />
+                    )}
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground mb-4">
