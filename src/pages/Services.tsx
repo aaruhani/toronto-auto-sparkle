@@ -6,19 +6,19 @@ import {
   Cog,
   ArrowRight,
   Zap,
-  Droplets,
-  Disc,
-  CircleDot,
-  Battery,
-  Wind,
-  Settings,
+  Fuel,
+  AlertCircle,
+  Gauge,
+  BatteryWarning,
+  Thermometer,
+  Car,
 } from "lucide-react";
 import servicesImage from "@/assets/services-bg.jpg";
 
 const Services = () => {
   const services = [
     {
-      icon: Droplets,
+      icon: Fuel,
       title: "Oil Change & Lubrication",
       description:
         "Regular oil changes and lubrication services to keep your engine running smoothly and extend its life",
@@ -30,7 +30,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Disc,
+      icon: AlertCircle,
       title: "Brake Service",
       description:
         "Complete brake system inspection, maintenance, and repair for optimal stopping power and safety",
@@ -42,7 +42,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Cog,
+      icon: Car,
       title: "Engine Diagnostics",
       description:
         "Advanced computer diagnostics to identify and resolve engine issues quickly and accurately",
@@ -54,7 +54,7 @@ const Services = () => {
       ],
     },
     {
-      icon: CircleDot,
+      icon: Gauge,
       title: "Tire Service",
       description:
         "Comprehensive tire services including installation, balancing, rotation, and alignment",
@@ -66,7 +66,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Battery,
+      icon: BatteryWarning,
       title: "Battery Service",
       description:
         "Battery testing, maintenance, and replacement to ensure reliable starts every time",
@@ -78,7 +78,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Wind,
+      icon: Thermometer,
       title: "Air Conditioning",
       description:
         "AC system diagnostics, recharge, and repair to keep you comfortable in any weather",
@@ -90,7 +90,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Settings,
+      icon: Cog,
       title: "Transmission Service",
       description:
         "Transmission maintenance and repair for smooth shifting and optimal performance",

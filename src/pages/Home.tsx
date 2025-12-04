@@ -11,14 +11,14 @@ import {
   Wrench, 
   ArrowRight, 
   ChevronRight,
-  Droplets,
-  Disc,
-  CircleDot,
-  Battery,
-  Wind,
-  Settings,
+  Fuel,
+  AlertCircle,
+  Gauge,
+  BatteryWarning,
+  Thermometer,
+  Cog,
   Zap,
-  Cog
+  Car
 } from "lucide-react";
 import heroImage from "@/assets/hero-garage.avif";
 
@@ -50,43 +50,43 @@ const Home = () => {
 
   const services = [
     {
-      icon: Droplets,
+      icon: Fuel,
       title: "Oil Change & Lubrication",
       description: "Regular oil changes and lubrication services to keep your engine running smoothly and extend its life",
       features: ["Synthetic & conventional oil", "Filter replacement", "Fluid level check", "Multi-point inspection"],
     },
     {
-      icon: Disc,
+      icon: AlertCircle,
       title: "Brake Service",
       description: "Complete brake system inspection, maintenance, and repair for optimal stopping power and safety",
       features: ["Brake pad replacement", "Rotor resurfacing", "Brake fluid flush", "ABS diagnostics"],
     },
     {
-      icon: Cog,
+      icon: Car,
       title: "Engine Diagnostics",
       description: "Advanced computer diagnostics to identify and resolve engine issues quickly and accurately",
       features: ["Check engine light diagnosis", "Performance testing", "Emission testing", "Computer reprogramming"],
     },
     {
-      icon: CircleDot,
+      icon: Gauge,
       title: "Tire Service",
       description: "Comprehensive tire services including installation, balancing, rotation, and alignment",
       features: ["Tire installation", "Wheel balancing", "Tire rotation", "Alignment service"],
     },
     {
-      icon: Battery,
+      icon: BatteryWarning,
       title: "Battery Service",
       description: "Battery testing, maintenance, and replacement to ensure reliable starts every time",
       features: ["Battery testing", "Terminal cleaning", "Battery replacement", "Charging system check"],
     },
     {
-      icon: Wind,
+      icon: Thermometer,
       title: "Air Conditioning",
       description: "AC system diagnostics, recharge, and repair to keep you comfortable in any weather",
       features: ["AC performance check", "Refrigerant recharge", "Leak detection", "Component replacement"],
     },
     {
-      icon: Settings,
+      icon: Cog,
       title: "Transmission Service",
       description: "Transmission maintenance and repair for smooth shifting and optimal performance",
       features: ["Fluid exchange", "Filter replacement", "Diagnostics", "Repair & rebuild"],
