@@ -227,9 +227,16 @@ const Home = () => {
             Contact us today for a free quote or to schedule your service
             appointment
           </p>
-          <Button asChild size="lg">
-            <Link to="/contact">Contact Us Today</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="font-bold">
+              <a href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=Y7C3apECuwSqaSpLkuchz5pmgsQ2&version=v.15.5.7" target="_blank" rel="noopener noreferrer">
+                Request an Appointment
+              </a>
+            </Button>
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-200 border-none font-bold">
+              <Link to="/contact">Contact Us Today</Link>
+            </Button>
+          </div>
         </div>
       </section>
 

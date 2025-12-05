@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -236,7 +237,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-primary/10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">
             Need Service for Your Vehicle?
@@ -245,11 +246,16 @@ const Services = () => {
             Get in touch with us today for a free quote or to schedule your
             service appointment
           </p>
-          <Button asChild size="lg">
-            <a href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=Y7C3apECuwSqaSpLkuchz5pmgsQ2&version=v.15.5.7" target="_blank" rel="noopener noreferrer">
-              Request an Appointment <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="font-bold">
+              <a href="https://arinvoice.utilitymobileapps.com/booking?FBProject=ARI&shopID=Y7C3apECuwSqaSpLkuchz5pmgsQ2&version=v.15.5.7" target="_blank" rel="noopener noreferrer">
+                Request an Appointment
+              </a>
+            </Button>
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-200 border-none font-bold">
+              <Link to="/contact">Contact Us Today</Link>
+            </Button>
+          </div>
         </div>
       </section>
 

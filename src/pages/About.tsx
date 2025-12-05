@@ -126,7 +126,7 @@ const About = () => {
             </div>
             <div>
               <div className="text-4xl font-bold text-primary mb-2">Certified</div>
-              <p className="text-muted-foreground">Expert Technicians</p>
+              <p className="text-muted-foreground">Technician</p>
             </div>
             <div>
               <div className="text-5xl font-bold text-primary mb-2">98%</div>
