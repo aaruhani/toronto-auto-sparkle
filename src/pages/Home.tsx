@@ -21,6 +21,7 @@ import batteryLightIcon from "@/assets/service-icons/battery-light.png";
 import acServiceIcon from "@/assets/service-icons/ac-service.png";
 import electricalServiceIcon from "@/assets/service-icons/electrical-service.png";
 import transmissionServiceIcon from "@/assets/service-icons/transmission-service.png";
+import mtoLogo from "@/assets/mto-certification.png";
 
 const Home = () => {
   const [expandedService, setExpandedService] = useState<number | null>(null);
@@ -157,6 +158,30 @@ const Home = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MTO Certification Section */}
+      <section className="py-12 bg-primary/5 border-y border-white/5">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6">Government Approved Inspection Station</h2>
+            <p className="text-muted-foreground mb-8">
+              We are fully authorized by the Ontario Ministry of Transportation to perform safety inspections and issue certificates.
+            </p>
+            <a
+              href="https://www.ontario.ca/page/safety-standards-certificate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src={mtoLogo}
+                alt="Ontario DriveON Authorized Inspection Station"
+                className="h-auto w-full max-w-[300px] md:max-w-[400px] mx-auto object-contain"
+              />
+            </a>
           </div>
         </div>
       </section>
