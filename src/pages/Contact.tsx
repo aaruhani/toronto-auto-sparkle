@@ -121,7 +121,7 @@ const Contact = () => {
     {
       icon: Clock,
       title: "Hours",
-      content: "Mon-Fri: 8AM-5PM, Sat: 9AM-2PM, Sun: Closed",
+      content: "Mon-Fri: 8AM-5PM, Sat: 8AM-2PM, Sun: Closed",
       link: null,
     },
   ];

@@ -10,9 +10,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img 
-                src={logo} 
-                alt="FIXWELL AUTO Logo" 
+              <img
+                src={logo}
+                alt="FIXWELL AUTO Logo"
                 className="h-8 w-auto sm:h-10"
               />
               <span className="font-bold">FIXWELL AUTO</span>
@@ -97,7 +97,7 @@ const Footer = () => {
                 <Clock className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                 <div className="text-sm text-muted-foreground">
                   <div>Mon-Fri: 8AM-5PM</div>
-                  <div>Sat: 9AM-2PM</div>
+                  <div>Sat: 8AM-2PM</div>
                   <div>Sun: Closed</div>
                 </div>
               </div>
