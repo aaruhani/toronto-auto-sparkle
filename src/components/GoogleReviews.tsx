@@ -159,7 +159,7 @@ const GoogleReviews = () => {
 
                 <div className="text-center mt-8">
                     <a
-                        href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJC1DRMQDV1IkRid_GssVkIvY"
+                        href="https://search.google.com/local/reviews?placeid=ChIJC1DRMQDV1IkRid_GssVkIvY"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline font-semibold"
